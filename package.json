@@ -1,0 +1,14 @@
+{
+  "name": "accounts_movements_tracking",
+  "version": "1.0.0",
+  "description": "some code to track movements from certain accounts (e.g. prex, ebrou, santander, etc)",
+  "main": "uploadData.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^39.2.0"
+  }
+}
