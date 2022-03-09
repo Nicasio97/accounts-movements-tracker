@@ -4,3 +4,5 @@ credentials.google.json
 credentials.accounts.json
 
 node_modules
+
+test.js
