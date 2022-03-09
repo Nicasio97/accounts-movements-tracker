@@ -5,7 +5,7 @@ const brou = require("./api_brou");
 brou.getExchangeToken(c.brou.user,c.brou.password).then((exchangeToken) => {    
     brou.getBearerToken(exchangeToken).then((bearerToken)=>{                
         brou.getAccountId(bearerToken,c.brou.accountsNumbers.usd).then((object)=>{            
-            brou.getMovementsFromAccount(object.bearerToken,object.accountId,"2022-01-01","2022-01-27").then((value)=>{                
+            brou.getMovementsFromAccount(object.bearerToken,object.accountId,"2022-02-01","2022-02-25").then((value)=>{                
                 let arrayMovements = value.data.statements;
                 let dataRowsArray = [];                    
                 console.log(arrayMovements);
