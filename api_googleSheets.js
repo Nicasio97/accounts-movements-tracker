@@ -108,6 +108,23 @@ async function updateData(dataRowsArray,sheetName) {
     }
 };
 
+async function getDataRows(sheetName,range) {
+    const client = await authorize();
+    const gsapi = google.sheets({
+        version: "v4",
+        auth: client,
+    });
+
+    let requestOptions = {
+        spreadsheetId: spreadsheetId,
+        range:  sheetName.concat('!',range)
+    };
+
+    let data = await gsapi.spreadsheets.values.get(requestOptions);
+    //console.log(data.data.values)
+    return data.data.values
+};
+
 function getSheetId(sheetName) {
     return new Promise((resolve,reject) =>{
         getMetaData().then((values) => {
