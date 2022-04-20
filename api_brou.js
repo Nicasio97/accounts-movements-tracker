@@ -72,7 +72,7 @@ const getExchangeToken = (user,password) => {
                     resolve(parsedData.data._exchangeToken);
                 })                                
             }else{
-                reject("Error in request getExchangeToken: " + res.statusCode)
+                reject("Error in request getExchangeToken: " + res.statusCode + ". Wrong user or password")
             }            
         })
 
@@ -157,10 +157,10 @@ const getAccountId = (bearerToken,bankAccount) => {
                     for (let i = 0; i < parsedData.length; i++){
                         if (parsedData[i].numberSuboperation == bankAccount){                            
                             isThereAMatch = true;
-                            resolve({
+                            resolve(parsedData[i].idProduct/*{
                                 bearerToken,
                                 accountId: parsedData[i].idProduct
-                            });
+                            }*/);
                         }
                     }
                     if (isThereAMatch == false){
