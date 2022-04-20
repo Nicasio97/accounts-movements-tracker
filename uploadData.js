@@ -35,9 +35,7 @@ brou.getExchangeToken(c.brou.user,c.brou.password).then((exchangeToken) => {
 },(err)=>{
     throw new Error(err);
 });
-
-//Arrow vs Normal functions: https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/#1-this-value 
-
+ 
 function extractFields(arrayMovements) {
     let dataRowsArray = [];                    
     for (let i = 0; i < arrayMovements.length; i++) {                    
