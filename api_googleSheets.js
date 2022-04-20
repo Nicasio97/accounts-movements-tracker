@@ -162,5 +162,6 @@ function pushData(sheetName,dataRowsArray){
 };
 
 module.exports = {
-    pushData
+    pushData,
+    getDataRows
 };
